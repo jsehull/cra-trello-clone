@@ -3,19 +3,16 @@ import {AppContainer} from './styles'
 import {Column} from './Column'
 import {Card} from './Card'
 import {AddNewItem} from './AddNewItem'
+import {useAppState} from './AppStateContext'
 
 const App = () => {
+  const {state} = useAppState()
+
   return (
     <AppContainer>
-      <Column text="To Do">
-        <Card text="state??" />
-      </Column>
-      <Column text="In Progress">
-        <Card text="adding more components" />
-      </Column>
-      <Column text="Done">
-        <Card text="Started new App" />
-      </Column>
+      {state.lists.map((list, i) => (
+        <Column text={list.text} key={list.id} index={i} />
+      ))}
       <AddNewItem
         toggleButtonText="+ Add another list"
         onAdd={console.log} />
