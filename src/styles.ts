@@ -33,3 +33,49 @@ export const CardContainer = styled.div`
   box-shadow: #091e4240 0px 1px 0px 0px;
   cursor: pointer;
 `
+interface AddItemButtonProps {
+  dark?: boolean
+}
+
+export const AddItemButton = styled.button<AddItemButtonProps>`
+  padding: 10px 12px;
+  width: 100%;
+  max-width: 300px;
+  background-color: #ffffff3d;
+  border-radius: 3px;
+  border: none;
+  text-align: left;
+  color: ${props => (props.dark ? "#000" : "#fff")};
+  transition: background 85ms ease-in;
+  cursor: pointer;
+  &:hover {
+    background-color: #ffffff52;
+  }
+`
+
+export const NewItemFormContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 300px;
+`
+
+export const NewItemButton = styled.button`
+  padding: 6px 12px;
+  background-color: #5aac44;
+  border-radius: 3px;
+  border: none;
+  box-shadow: none;
+  color: #fff;
+  text-align: center;
+`
+
+export const NewItemInput = styled.input`
+  margin-bottom: 0.5rem;
+  padding: 0.5rem 1rem;
+  width: 100%;
+  border-radius: 3px;
+  border: none;
+  box-shadow: #091e4240 0px 1px 0px 0px;
+`
